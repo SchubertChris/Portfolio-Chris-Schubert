@@ -1,1 +1,264 @@
 /* Hier werden alle Styles gebunden */
+
+// ===========================
+// MAIN SCSS ENTRY POINT
+// ===========================
+
+// Base Imports - Reihenfolge ist wichtig!
+@import './Base/VARIABLES';
+@import './Base/MIXINS';
+@import './Base/RESET';
+@import './Base/ANIMATIONS';
+@import './Base/LightMode';
+@import './Base/DarkMode';
+
+// ===========================
+// GLOBAL STYLES
+// ===========================
+
+// Root und Body
+:root {
+  // Smooth transitions beim Theme Switch
+  transition: background-color $transition-normal, color $transition-normal;
+}
+
+body {
+  @include themed-background;
+  overflow-x: hidden;
+  position: relative;
+}
+
+// App Container
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// ===========================
+// TYPOGRAPHY
+// ===========================
+
+h1 {
+  @include heading-style($font-size-5xl);
+  margin-bottom: $spacing-lg;
+  
+  @include breakpoint-max('md') {
+    font-size: $font-size-4xl;
+  }
+}
+
+h2 {
+  @include heading-style($font-size-4xl);
+  margin-bottom: $spacing-md;
+  
+  @include breakpoint-max('md') {
+    font-size: $font-size-3xl;
+  }
+}
+
+h3 {
+  @include heading-style($font-size-3xl);
+  margin-bottom: $spacing-md;
+  
+  @include breakpoint-max('md') {
+    font-size: $font-size-2xl;
+  }
+}
+
+h4 {
+  @include heading-style($font-size-2xl, $font-weight-semibold);
+  margin-bottom: $spacing-sm;
+}
+
+h5 {
+  @include heading-style($font-size-xl, $font-weight-semibold);
+  margin-bottom: $spacing-sm;
+}
+
+h6 {
+  @include heading-style($font-size-lg, $font-weight-semibold);
+  margin-bottom: $spacing-sm;
+}
+
+p {
+  margin-bottom: $spacing-md;
+  color: var(--color-text);
+  line-height: $line-height-relaxed;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color $transition-fast;
+  
+  &:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+  }
+  
+  &:visited {
+    color: var(--color-link-visited);
+  }
+}
+
+// ===========================
+// UTILITY CLASSES
+// ===========================
+
+// Container
+.container {
+  @include container;
+}
+
+// Text Utilities
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-xs { font-size: $font-size-xs; }
+.text-sm { font-size: $font-size-sm; }
+.text-md { font-size: $font-size-md; }
+.text-lg { font-size: $font-size-lg; }
+.text-xl { font-size: $font-size-xl; }
+
+.font-light { font-weight: $font-weight-light; }
+.font-normal { font-weight: $font-weight-normal; }
+.font-medium { font-weight: $font-weight-medium; }
+.font-semibold { font-weight: $font-weight-semibold; }
+.font-bold { font-weight: $font-weight-bold; }
+
+// Spacing Utilities
+.mt-xs { margin-top: $spacing-xs; }
+.mt-sm { margin-top: $spacing-sm; }
+.mt-md { margin-top: $spacing-md; }
+.mt-lg { margin-top: $spacing-lg; }
+.mt-xl { margin-top: $spacing-xl; }
+
+.mb-xs { margin-bottom: $spacing-xs; }
+.mb-sm { margin-bottom: $spacing-sm; }
+.mb-md { margin-bottom: $spacing-md; }
+.mb-lg { margin-bottom: $spacing-lg; }
+.mb-xl { margin-bottom: $spacing-xl; }
+
+.py-xs { padding-top: $spacing-xs; padding-bottom: $spacing-xs; }
+.py-sm { padding-top: $spacing-sm; padding-bottom: $spacing-sm; }
+.py-md { padding-top: $spacing-md; padding-bottom: $spacing-md; }
+.py-lg { padding-top: $spacing-lg; padding-bottom: $spacing-lg; }
+.py-xl { padding-top: $spacing-xl; padding-bottom: $spacing-xl; }
+
+.px-xs { padding-left: $spacing-xs; padding-right: $spacing-xs; }
+.px-sm { padding-left: $spacing-sm; padding-right: $spacing-sm; }
+.px-md { padding-left: $spacing-md; padding-right: $spacing-md; }
+.px-lg { padding-left: $spacing-lg; padding-right: $spacing-lg; }
+.px-xl { padding-left: $spacing-xl; padding-right: $spacing-xl; }
+
+// Display Utilities
+.hidden { display: none !important; }
+.block { display: block !important; }
+.inline-block { display: inline-block !important; }
+.flex { display: flex !important; }
+.grid { display: grid !important; }
+
+// Flex Utilities
+.flex-center { @include flex-center; }
+.flex-between { @include flex-between; }
+.flex-col { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.gap-sm { gap: $spacing-sm; }
+.gap-md { gap: $spacing-md; }
+.gap-lg { gap: $spacing-lg; }
+
+// Visual Utilities
+.rounded-sm { border-radius: $border-radius-sm; }
+.rounded-md { border-radius: $border-radius-md; }
+.rounded-lg { border-radius: $border-radius-lg; }
+.rounded-full { border-radius: $border-radius-full; }
+
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }
+
+// ===========================
+// COMPONENTS
+// ===========================
+
+// Buttons
+.btn {
+  @include reset-button;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $border-radius-md;
+  font-weight: $font-weight-medium;
+  transition: all $transition-fast;
+  
+  &-primary {
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    
+    &:hover {
+      background-color: var(--color-link-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+  }
+  
+  &-secondary {
+    background-color: var(--color-background-secondary);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    
+    &:hover {
+      background-color: var(--color-hover);
+      border-color: var(--color-accent);
+    }
+  }
+  
+  &-lg {
+    padding: $spacing-md $spacing-xl;
+    font-size: $font-size-lg;
+  }
+  
+  &-sm {
+    padding: $spacing-xs $spacing-md;
+    font-size: $font-size-sm;
+  }
+}
+
+// Cards
+.card {
+  @include themed-card;
+  
+  &:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+}
+
+// Sections
+.section {
+  padding: $spacing-4xl 0;
+  
+  @include breakpoint-max('md') {
+    padding: $spacing-3xl 0;
+  }
+}
+
+// ===========================
+// RESPONSIVE UTILITIES
+// ===========================
+
+@include breakpoint-max('md') {
+  .hide-mobile { display: none !important; }
+}
+
+@include breakpoint('md') {
+  .hide-desktop { display: none !important; }
+}

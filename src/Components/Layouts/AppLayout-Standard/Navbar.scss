@@ -1,0 +1,219 @@
+// ===========================
+// NAVBAR STYLES
+// ===========================
+
+@import '@styles/Base/VARIABLES';
+@import '@styles/Base/MIXINS';
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $navbar-height;
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  z-index: $z-index-sticky;
+  transition: all $transition-normal;
+
+  // Sticky State
+  &--sticky {
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(10px);
+    background-color: rgba(var(--color-background), 0.95);
+  }
+
+  // Container
+  &__container {
+    @include container;
+    @include flex-between;
+    height: 100%;
+  }
+
+  // Logo
+  &__logo {
+    @include flex(row, center, center, nowrap, $spacing-xs);
+    text-decoration: none !important;
+    font-weight: $font-weight-bold;
+    transition: transform $transition-fast;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &-text {
+      font-size: $font-size-2xl;
+      color: var(--color-accent);
+      letter-spacing: -1px;
+    }
+
+    &-subtext {
+      font-size: $font-size-sm;
+      color: var(--color-text-secondary);
+      font-weight: $font-weight-normal;
+    }
+  }
+
+  // Desktop Navigation
+  &__desktop {
+    @include flex(row, center, center, nowrap, $spacing-xl);
+    
+    @include breakpoint-max('md') {
+      display: none;
+    }
+  }
+
+  // Navigation Links
+  &__links {
+    @include flex(row, center, center, nowrap, $spacing-lg);
+    list-style: none;
+  }
+
+  &__link {
+    position: relative;
+    padding: $spacing-xs 0;
+    color: var(--color-text);
+    text-decoration: none !important;
+    font-weight: $font-weight-medium;
+    transition: color $transition-fast;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--color-accent);
+      transition: width $transition-fast;
+    }
+
+    &:hover {
+      color: var(--color-accent);
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &--active {
+      color: var(--color-accent);
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  // Mobile Toggle Button
+  &__toggle {
+    @include reset-button;
+    @include flex-center;
+    width: 40px;
+    height: 40px;
+    padding: $spacing-xs;
+    flex-direction: column;
+    gap: 4px;
+    
+    @include breakpoint('md') {
+      display: none;
+    }
+
+    &-line {
+      width: 24px;
+      height: 2px;
+      background-color: var(--color-text);
+      transition: all $transition-fast;
+      transform-origin: center;
+    }
+
+    &--open {
+      .navbar__toggle-line {
+        &:nth-child(1) {
+          transform: translateY(6px) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+          transform: scaleX(0);
+        }
+
+        &:nth-child(3) {
+          transform: translateY(-6px) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  // Mobile Navigation
+  &__mobile {
+    position: fixed;
+    top: $navbar-height;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-background);
+    transform: translateX(100%);
+    transition: transform $transition-normal;
+    overflow-y: auto;
+    padding: $spacing-xl;
+
+    @include breakpoint('md') {
+      display: none;
+    }
+
+    &--open {
+      transform: translateX(0);
+    }
+
+    &-links {
+      list-style: none;
+      @include flex(column, flex-start, stretch, nowrap, $spacing-md);
+      margin-bottom: $spacing-xl;
+    }
+
+    &-link {
+      display: block;
+      padding: $spacing-md;
+      color: var(--color-text);
+      text-decoration: none;
+      font-size: $font-size-lg;
+      font-weight: $font-weight-medium;
+      text-align: center;
+      border-radius: $border-radius-md;
+      transition: all $transition-fast;
+      opacity: 0;
+      animation: fadeInUp 0.5s ease-out forwards;
+
+      &:hover,
+      &:focus {
+        background-color: var(--color-hover);
+        color: var(--color-accent);
+      }
+
+      &--active {
+        background-color: var(--color-hover);
+        color: var(--color-accent);
+      }
+    }
+
+    &-footer {
+      @include flex-center;
+      padding-top: $spacing-lg;
+      border-top: 1px solid var(--color-border);
+    }
+  }
+
+  // Overlay
+  &__overlay {
+    position: fixed;
+    top: $navbar-height;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-overlay);
+    z-index: $z-index-fixed - 1;
+    opacity: 0;
+    animation: fadeIn $transition-fast forwards;
+  }
+}

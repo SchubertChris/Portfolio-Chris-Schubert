@@ -1,0 +1,32 @@
+// ===========================
+// LANDING PAGE STYLES
+// ===========================
+
+@import '@styles/Base/VARIABLES';
+@import '@styles/Base/MIXINS';
+
+.landing-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  
+  // Der animierte Hintergrund wird absolut positioniert
+  // und erstreckt sich über die gesamte Höhe der Landing Page
+  
+  // Alle Sections bekommen einen leichten Background für bessere Lesbarkeit
+  section {
+    position: relative;
+    z-index: 1;
+    
+    // Leichter Background-Overlay für bessere Lesbarkeit
+    &:nth-child(odd) {
+      background-color: rgba(var(--color-background), 0.5);
+      backdrop-filter: blur(20px);
+    }
+    
+    &:nth-child(even) {
+      background-color: rgba(var(--color-background-secondary), 0.5);
+      backdrop-filter: blur(20px);
+    }
+  }
+}

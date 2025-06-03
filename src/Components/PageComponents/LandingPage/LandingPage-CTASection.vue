@@ -1,1 +1,0 @@
-<!-- Call to Action für gemeinsame Coding Projekte oder Jobangebote und Koorperationen oder auch für Arbeitsaufträge -->

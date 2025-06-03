@@ -1,0 +1,15 @@
+// ===========================
+// APP LAYOUT STYLES
+// ===========================
+
+@import '@styles/Base/VARIABLES';
+@import '@styles/Base/MIXINS';
+
+.app-layout {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  background-color: var(--color-background);
+}

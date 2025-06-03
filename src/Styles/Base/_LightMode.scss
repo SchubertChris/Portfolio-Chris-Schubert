@@ -1,1 +1,72 @@
 /* Lightmode Variables */
+
+// ===========================
+// LIGHT MODE THEME
+// ===========================
+
+:root {
+  // Hauptfarben
+  --color-background: #{$light-background};
+  --color-background-secondary: #{$light-background-secondary};
+  --color-text: #{$light-text};
+  --color-text-secondary: #{$light-text-secondary};
+  --color-border: #{$light-border};
+  --color-accent: #{$light-accent};
+  
+  // Schatten
+  --shadow-color: #{$light-shadow};
+  --shadow-sm: 0 1px 2px 0 var(--shadow-color);
+  --shadow-md: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
+  --shadow-lg: 0 10px 15px -3px var(--shadow-color), 0 4px 6px -2px var(--shadow-color);
+  --shadow-xl: 0 20px 25px -5px var(--shadow-color), 0 10px 10px -5px var(--shadow-color);
+  
+  // Zusätzliche Farben
+  --color-hover: #{darken($light-background-secondary, 5%)};
+  --color-active: #{darken($light-background-secondary, 10%)};
+  --color-disabled: #{lighten($light-text-secondary, 20%)};
+  
+  // Links
+  --color-link: #{$color-primary-4};
+  --color-link-hover: #{darken($color-primary-4, 10%)};
+  --color-link-visited: #{$color-primary-5};
+  
+  // Status Farben
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+  
+  // Overlays
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --color-backdrop: rgba(255, 255, 255, 0.8);
+}
+
+// Light Mode spezifische Stile
+[data-theme="light"] {
+  color-scheme: light;
+  
+  // Scrollbar Styling
+  &::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: var(--color-background);
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: $border-radius-md;
+    
+    &:hover {
+      background: var(--color-text-secondary);
+    }
+  }
+  
+  // Auswahl
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-background);
+  }
+}

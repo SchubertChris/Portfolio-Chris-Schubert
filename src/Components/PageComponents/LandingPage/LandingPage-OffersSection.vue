@@ -1,1 +1,0 @@
-<!-- Hier kommen Kundenrezensionen und Erfahrungsberichte rein -->

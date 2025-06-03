@@ -1,1 +1,75 @@
 /* Dakrmode Variables */
+
+// ===========================
+// DARK MODE THEME
+// ===========================
+
+[data-theme="dark"] {
+  // Hauptfarben
+  --color-background: #{$dark-background};
+  --color-background-secondary: #{$dark-background-secondary};
+  --color-text: #{$dark-text};
+  --color-text-secondary: #{$dark-text-secondary};
+  --color-border: #{$dark-border};
+  --color-accent: #{$dark-accent};
+  
+  // Schatten
+  --shadow-color: #{$dark-shadow};
+  --shadow-sm: 0 1px 2px 0 var(--shadow-color);
+  --shadow-md: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
+  --shadow-lg: 0 10px 15px -3px var(--shadow-color), 0 4px 6px -2px var(--shadow-color);
+  --shadow-xl: 0 20px 25px -5px var(--shadow-color), 0 10px 10px -5px var(--shadow-color);
+  
+  // Zusätzliche Farben
+  --color-hover: #{lighten($dark-background-secondary, 5%)};
+  --color-active: #{lighten($dark-background-secondary, 10%)};
+  --color-disabled: #{darken($dark-text-secondary, 20%)};
+  
+  // Links
+  --color-link: #{$dark-accent};
+  --color-link-hover: #{lighten($dark-accent, 10%)};
+  --color-link-visited: #{darken($dark-accent, 10%)};
+  
+  // Status Farben (angepasst für Dark Mode)
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+  --color-error: #f87171;
+  --color-info: #60a5fa;
+  
+  // Overlays
+  --color-overlay: rgba(0, 0, 0, 0.7);
+  --color-backdrop: rgba(0, 0, 0, 0.8);
+  
+  // Dark Mode spezifische Eigenschaften
+  color-scheme: dark;
+  
+  // Scrollbar Styling
+  &::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: var(--color-background);
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: $border-radius-md;
+    
+    &:hover {
+      background: var(--color-text-secondary);
+    }
+  }
+  
+  // Auswahl
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-background);
+  }
+  
+  // Bilder leicht abdunkeln
+  img:not([data-no-dim]) {
+    filter: brightness(0.9);
+  }
+}

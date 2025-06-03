@@ -21,7 +21,22 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    /* Path Mapping */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@components/*": ["src/Components/*"],
+      "@pages/*": ["src/Pages/*"],
+      "@styles/*": ["src/Styles/*"],
+      "@services/*": ["src/Services/*"],
+      "@router/*": ["src/Router/*"],
+      "@types/*": ["src/Types/*"],
+      "@utils/*": ["src/Components/Utils/*"],
+      "@assets/*": ["src/assets/*"]
+    }
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["src/**/*.vue"]
 }

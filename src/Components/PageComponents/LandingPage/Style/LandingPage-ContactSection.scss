@@ -4,6 +4,7 @@
 
 @use '@styles/Base/VARIABLES' as *;
 @use '@styles/Base/MIXINS' as *;
+
 .cta {
   position: relative;
   overflow: hidden;
@@ -38,6 +39,7 @@
     gap: $spacing-md;
     margin-bottom: $spacing-2xl;
     flex-wrap: wrap;
+
     .btn-secondary {
       @include transition(background-color, color);
       color: var(--color-text);
@@ -49,6 +51,7 @@
         transform: translateY(-2px);
       }
     }
+
     .btn-primary {
       @include transition(background-color, color);
       color: var(--color-bg);
@@ -81,7 +84,7 @@
 
     &--available {
       background-color: #10b981;
-      
+
       &::before {
         content: '';
         position: absolute;

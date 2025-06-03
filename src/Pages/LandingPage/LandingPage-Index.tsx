@@ -7,14 +7,14 @@ import HeroSection from '@/Components/PageComponents/LandingPage/LandingPage-Her
 import AboutSection from '@/Components/PageComponents/LandingPage/LandingPage-AboutSection';
 import WorkSection from '@/Components/PageComponents/LandingPage/LandingPage-WorkSection';
 import OffersSection from '@/Components/PageComponents/LandingPage/LandingPage-OffersSection';
-import CTASection from '@/Components/PageComponents/LandingPage/LandingPage-CTASection';
+import CTASection from '@/Components/PageComponents/LandingPage/LandingPage-ContactSection';
 import { createFadeInObserver } from '@/Components/Utils/ScrollObserver';
 
 const LandingPage: React.FC = () => {
   useEffect(() => {
     // Initialize scroll animations
     const observer = createFadeInObserver();
-    
+
     // Observe all reveal elements
     observer.observeAll('.reveal');
 

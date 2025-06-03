@@ -5,7 +5,7 @@
 // ===========================
 
 import React, { useState } from 'react';
-import './LandingPage-OffersSection.scss';
+import './Style/LandingPage-OffersSection.scss';
 
 interface Testimonial {
   id: number;
@@ -69,13 +69,13 @@ const OffersSection: React.FC = () => {
         </div>
 
         <div className="offers__testimonials reveal">
-          <button 
-            className="offers__nav offers__nav--prev" 
+          <button
+            className="offers__nav offers__nav--prev"
             onClick={handlePrev}
             aria-label="Vorheriges Testimonial"
           >
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
 
@@ -83,14 +83,13 @@ const OffersSection: React.FC = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={testimonial.id}
-                className={`offers__testimonial ${
-                  index === activeTestimonial ? 'offers__testimonial--active' : ''
-                }`}
+                className={`offers__testimonial ${index === activeTestimonial ? 'offers__testimonial--active' : ''
+                  }`}
               >
                 <div className="offers__quote">
                   <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/>
-                    <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
+                    <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" />
+                    <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" />
                   </svg>
                 </div>
 
@@ -99,14 +98,14 @@ const OffersSection: React.FC = () => {
                 <div className="offers__rating">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <svg key={i} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                     </svg>
                   ))}
                 </div>
 
                 <div className="offers__author">
-                  <img 
-                    src={testimonial.avatar} 
+                  <img
+                    src={testimonial.avatar}
                     alt={testimonial.name}
                     className="offers__author-avatar"
                   />
@@ -121,13 +120,13 @@ const OffersSection: React.FC = () => {
             ))}
           </div>
 
-          <button 
-            className="offers__nav offers__nav--next" 
+          <button
+            className="offers__nav offers__nav--next"
             onClick={handleNext}
             aria-label="Nächstes Testimonial"
           >
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
         </div>
@@ -136,9 +135,8 @@ const OffersSection: React.FC = () => {
           {testimonials.map((_, index) => (
             <button
               key={index}
-              className={`offers__indicator ${
-                index === activeTestimonial ? 'offers__indicator--active' : ''
-              }`}
+              className={`offers__indicator ${index === activeTestimonial ? 'offers__indicator--active' : ''
+                }`}
               onClick={() => setActiveTestimonial(index)}
               aria-label={`Gehe zu Testimonial ${index + 1}`}
             />

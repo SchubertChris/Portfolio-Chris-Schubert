@@ -3,7 +3,7 @@
 // ===========================
 
 import React from 'react';
-import './LandingPage-HeroSection.scss';
+import './Style/LandingPage-HeroSection.scss';
 
 const HeroSection: React.FC = () => {
   return (
@@ -27,8 +27,8 @@ const HeroSection: React.FC = () => {
 
           {/* Description */}
           <p className="hero__description animate-fadeInUp animation-delay-600">
-            Ich erschaffe digitale Erlebnisse, die begeistern. Mit modernsten Technologien 
-            und einem Auge für Design entwickle ich Lösungen, die nicht nur funktionieren, 
+            Ich erschaffe digitale Erlebnisse, die begeistern. Mit modernsten Technologien
+            und einem Auge für Design entwickle ich Lösungen, die nicht nur funktionieren,
             sondern inspirieren.
           </p>
 
@@ -55,7 +55,7 @@ const HeroSection: React.FC = () => {
             <div className="hero__code-content">
               <pre>
                 <code>
-{`const developer = {
+                  {`const developer = {
   name: 'Chris Schubert',
   skills: ['React', 'TypeScript', 'Node.js'],
   passion: 'Creating amazing experiences',
@@ -71,7 +71,7 @@ const HeroSection: React.FC = () => {
       {/* Scroll Indicator */}
       <div className="hero__scroll-indicator animate-bounce">
         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
     </section>

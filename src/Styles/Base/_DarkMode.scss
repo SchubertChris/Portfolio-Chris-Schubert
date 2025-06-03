@@ -1,34 +1,37 @@
-/* Dakrmode Variables */
+/* Darkmode Variables */
 
 // ===========================
 // DARK MODE THEME
 // ===========================
 
+@use 'sass:color';
+@use 'VARIABLES' as vars;
+
 [data-theme="dark"] {
   // Hauptfarben
-  --color-background: #{$dark-background};
-  --color-background-secondary: #{$dark-background-secondary};
-  --color-text: #{$dark-text};
-  --color-text-secondary: #{$dark-text-secondary};
-  --color-border: #{$dark-border};
-  --color-accent: #{$dark-accent};
+  --color-background: #{vars.$dark-background};
+  --color-background-secondary: #{vars.$dark-background-secondary};
+  --color-text: #{vars.$dark-text};
+  --color-text-secondary: #{vars.$dark-text-secondary};
+  --color-border: #{vars.$dark-border};
+  --color-accent: #{vars.$dark-accent};
   
   // Schatten
-  --shadow-color: #{$dark-shadow};
+  --shadow-color: #{vars.$dark-shadow};
   --shadow-sm: 0 1px 2px 0 var(--shadow-color);
   --shadow-md: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
   --shadow-lg: 0 10px 15px -3px var(--shadow-color), 0 4px 6px -2px var(--shadow-color);
   --shadow-xl: 0 20px 25px -5px var(--shadow-color), 0 10px 10px -5px var(--shadow-color);
   
   // Zusätzliche Farben
-  --color-hover: #{lighten($dark-background-secondary, 5%)};
-  --color-active: #{lighten($dark-background-secondary, 10%)};
-  --color-disabled: #{darken($dark-text-secondary, 20%)};
+  --color-hover: #{color.scale(vars.$dark-background-secondary, $lightness: 5%)};
+  --color-active: #{color.scale(vars.$dark-background-secondary, $lightness: 10%)};
+  --color-disabled: #{color.scale(vars.$dark-text-secondary, $lightness: -20%)};
   
   // Links
-  --color-link: #{$dark-accent};
-  --color-link-hover: #{lighten($dark-accent, 10%)};
-  --color-link-visited: #{darken($dark-accent, 10%)};
+  --color-link: #{vars.$dark-accent};
+  --color-link-hover: #{color.scale(vars.$dark-accent, $lightness: 10%)};
+  --color-link-visited: #{color.scale(vars.$dark-accent, $lightness: -10%)};
   
   // Status Farben (angepasst für Dark Mode)
   --color-success: #34d399;
@@ -55,7 +58,7 @@
   
   &::-webkit-scrollbar-thumb {
     background: var(--color-border);
-    border-radius: $border-radius-md;
+    border-radius: vars.$border-radius-md;
     
     &:hover {
       background: var(--color-text-secondary);

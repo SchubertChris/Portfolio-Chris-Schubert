@@ -1,9 +1,8 @@
 // ===========================
 // HERO SECTION STYLES
 // ===========================
+@use '@styles/Base' as *;
 
-@import '@styles/Base/VARIABLES';
-@import '@styles/Base/MIXINS';
 
 .hero {
   min-height: calc(100vh - #{$navbar-height});

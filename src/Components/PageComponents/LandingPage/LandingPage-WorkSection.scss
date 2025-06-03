@@ -1,9 +1,8 @@
 // ===========================
 // WORK SECTION STYLES
 // ===========================
+@use '@styles/Base' as *;
 
-@import '@styles/Base/VARIABLES';
-@import '@styles/Base/MIXINS';
 
 .work {
   &__header {

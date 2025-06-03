@@ -4,31 +4,34 @@
 // LIGHT MODE THEME
 // ===========================
 
+@use 'sass:color';
+@use 'VARIABLES' as vars;
+
 :root {
   // Hauptfarben
-  --color-background: #{$light-background};
-  --color-background-secondary: #{$light-background-secondary};
-  --color-text: #{$light-text};
-  --color-text-secondary: #{$light-text-secondary};
-  --color-border: #{$light-border};
-  --color-accent: #{$light-accent};
+  --color-background: #{vars.$light-background};
+  --color-background-secondary: #{vars.$light-background-secondary};
+  --color-text: #{vars.$light-text};
+  --color-text-secondary: #{vars.$light-text-secondary};
+  --color-border: #{vars.$light-border};
+  --color-accent: #{vars.$light-accent};
   
   // Schatten
-  --shadow-color: #{$light-shadow};
+  --shadow-color: #{vars.$light-shadow};
   --shadow-sm: 0 1px 2px 0 var(--shadow-color);
   --shadow-md: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
   --shadow-lg: 0 10px 15px -3px var(--shadow-color), 0 4px 6px -2px var(--shadow-color);
   --shadow-xl: 0 20px 25px -5px var(--shadow-color), 0 10px 10px -5px var(--shadow-color);
   
   // Zusätzliche Farben
-  --color-hover: #{darken($light-background-secondary, 5%)};
-  --color-active: #{darken($light-background-secondary, 10%)};
-  --color-disabled: #{lighten($light-text-secondary, 20%)};
+  --color-hover: #{color.scale(vars.$light-background-secondary, $lightness: -5%)};
+  --color-active: #{color.scale(vars.$light-background-secondary, $lightness: -10%)};
+  --color-disabled: #{color.scale(vars.$light-text-secondary, $lightness: 20%)};
   
   // Links
-  --color-link: #{$color-primary-4};
-  --color-link-hover: #{darken($color-primary-4, 10%)};
-  --color-link-visited: #{$color-primary-5};
+  --color-link: #{vars.$color-primary-4};
+  --color-link-hover: #{color.scale(vars.$color-primary-4, $lightness: -10%)};
+  --color-link-visited: #{vars.$color-primary-5};
   
   // Status Farben
   --color-success: #10b981;
@@ -57,7 +60,7 @@
   
   &::-webkit-scrollbar-thumb {
     background: var(--color-border);
-    border-radius: $border-radius-md;
+    border-radius: vars.$border-radius-md;
     
     &:hover {
       background: var(--color-text-secondary);

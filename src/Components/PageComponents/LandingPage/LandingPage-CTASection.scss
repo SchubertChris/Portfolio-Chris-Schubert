@@ -2,8 +2,7 @@
 // CTA SECTION STYLES
 // ===========================
 
-@import '@styles/Base/_VARIABLES';
-@import '@styles/Base/_MIXINS';
+@use '@styles/Base' as *;
 
 .cta {
   position: relative;

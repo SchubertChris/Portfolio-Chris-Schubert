@@ -2,8 +2,7 @@
 // NAVBAR STYLES
 // ===========================
 
-@import '@styles/Base/VARIABLES';
-@import '@styles/Base/MIXINS';
+@use '@styles/Base/_index.scss' as *;
 
 .navbar {
   position: fixed;

@@ -2,8 +2,11 @@
 // THEME TOGGLE BUTTON STYLES
 // ===========================
 
-@import '@styles/Base/VARIABLES';
-@import '@styles/Base/MIXINS';
+
+@use '@styles/Base/_VARIABLES' as vars;
+@use '@styles/Base/_MIXINS' as mixins;
+@use '@styles/Base/_ANIMATIONS' as animations;
+
 
 .theme-toggle {
   @include reset-button;

@@ -1,6 +1,10 @@
-/* Globaler Reset für alle Elemente */// ===========================
+/* Globaler Reset für alle Elemente */
+
+// ===========================
 // MODERN CSS RESET
 // ===========================
+
+@use 'VARIABLES' as *;
 
 // Box sizing rules
 *,

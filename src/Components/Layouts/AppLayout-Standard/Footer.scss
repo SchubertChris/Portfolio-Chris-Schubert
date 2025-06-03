@@ -2,9 +2,7 @@
 // FOOTER STYLES
 // ===========================
 
-@import '@styles/Base/VARIABLES';
-@import '@styles/Base/MIXINS';
-
+@use '@styles/Base' as *;
 .footer {
   background-color: var(--color-background-secondary);
   border-top: 1px solid var(--color-border);

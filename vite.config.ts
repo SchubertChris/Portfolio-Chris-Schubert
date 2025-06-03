@@ -21,7 +21,10 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "@styles/Base/_VARIABLES.scss";`
+        // Laden der Base-Styles als globale Imports
+        additionalData: `@use "@styles/Base" as *;`,
+        // Moderne Sass API aktivieren
+        api: 'modern-compiler'
       }
     }
   }

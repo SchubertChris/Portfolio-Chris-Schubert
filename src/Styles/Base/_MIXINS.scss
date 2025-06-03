@@ -4,38 +4,40 @@
 // SCSS MIXINS
 // ===========================
 
+@use 'VARIABLES' as vars;
+
 // ===========================
 // RESPONSIVE BREAKPOINTS
 // ===========================
 
 @mixin breakpoint($breakpoint) {
   @if $breakpoint == 'xs' {
-    @media (min-width: $breakpoint-xs) { @content; }
+    @media (min-width: vars.$breakpoint-xs) { @content; }
   } @else if $breakpoint == 'sm' {
-    @media (min-width: $breakpoint-sm) { @content; }
+    @media (min-width: vars.$breakpoint-sm) { @content; }
   } @else if $breakpoint == 'md' {
-    @media (min-width: $breakpoint-md) { @content; }
+    @media (min-width: vars.$breakpoint-md) { @content; }
   } @else if $breakpoint == 'lg' {
-    @media (min-width: $breakpoint-lg) { @content; }
+    @media (min-width: vars.$breakpoint-lg) { @content; }
   } @else if $breakpoint == 'xl' {
-    @media (min-width: $breakpoint-xl) { @content; }
+    @media (min-width: vars.$breakpoint-xl) { @content; }
   } @else if $breakpoint == '2xl' {
-    @media (min-width: $breakpoint-2xl) { @content; }
+    @media (min-width: vars.$breakpoint-2xl) { @content; }
   }
 }
 
 // Max-width Breakpoints
 @mixin breakpoint-max($breakpoint) {
   @if $breakpoint == 'xs' {
-    @media (max-width: #{$breakpoint-xs - 1px}) { @content; }
+    @media (max-width: #{vars.$breakpoint-xs - 1px}) { @content; }
   } @else if $breakpoint == 'sm' {
-    @media (max-width: #{$breakpoint-sm - 1px}) { @content; }
+    @media (max-width: #{vars.$breakpoint-sm - 1px}) { @content; }
   } @else if $breakpoint == 'md' {
-    @media (max-width: #{$breakpoint-md - 1px}) { @content; }
+    @media (max-width: #{vars.$breakpoint-md - 1px}) { @content; }
   } @else if $breakpoint == 'lg' {
-    @media (max-width: #{$breakpoint-lg - 1px}) { @content; }
+    @media (max-width: #{vars.$breakpoint-lg - 1px}) { @content; }
   } @else if $breakpoint == 'xl' {
-    @media (max-width: #{$breakpoint-xl - 1px}) { @content; }
+    @media (max-width: #{vars.$breakpoint-xl - 1px}) { @content; }
   }
 }
 
@@ -70,7 +72,7 @@
 // GRID
 // ===========================
 
-@mixin grid($columns: 1, $gap: $spacing-md, $auto-fit: false, $min-width: 250px) {
+@mixin grid($columns: 1, $gap: vars.$spacing-md, $auto-fit: false, $min-width: 250px) {
   display: grid;
   gap: $gap;
   
@@ -126,10 +128,10 @@
   text-overflow: ellipsis;
 }
 
-@mixin heading-style($size, $weight: $font-weight-bold) {
+@mixin heading-style($size, $weight: vars.$font-weight-bold) {
   font-size: $size;
   font-weight: $weight;
-  line-height: $line-height-tight;
+  line-height: vars.$line-height-tight;
   color: var(--color-text);
 }
 
@@ -145,7 +147,7 @@
 }
 
 @mixin hover-lift {
-  transition: transform $transition-normal, box-shadow $transition-normal;
+  transition: transform vars.$transition-normal, box-shadow vars.$transition-normal;
   
   &:hover {
     transform: translateY(-4px);
@@ -154,7 +156,7 @@
 }
 
 @mixin hover-scale($scale: 1.05) {
-  transition: transform $transition-normal;
+  transition: transform vars.$transition-normal;
   
   &:hover {
     transform: scale($scale);
@@ -167,16 +169,16 @@
 
 @mixin container {
   width: 100%;
-  max-width: $container-max-width;
+  max-width: vars.$container-max-width;
   margin: 0 auto;
-  padding: 0 $spacing-md;
+  padding: 0 vars.$spacing-md;
   
   @include breakpoint('md') {
-    padding: 0 $spacing-lg;
+    padding: 0 vars.$spacing-lg;
   }
   
   @include breakpoint('lg') {
-    padding: 0 $spacing-xl;
+    padding: 0 vars.$spacing-xl;
   }
 }
 
@@ -212,7 +214,7 @@
 // ANIMATIONS
 // ===========================
 
-@mixin transition($properties: all, $duration: $transition-normal, $easing: ease-in-out) {
+@mixin transition($properties: all, $duration: vars.$transition-normal, $easing: ease-in-out) {
   transition: $properties $duration $easing;
 }
 
@@ -229,14 +231,14 @@
 @mixin themed-background {
   background-color: var(--color-background);
   color: var(--color-text);
-  transition: background-color $transition-normal, color $transition-normal;
+  transition: background-color vars.$transition-normal, color vars.$transition-normal;
 }
 
 @mixin themed-card {
   background-color: var(--color-background-secondary);
   border: 1px solid var(--color-border);
-  border-radius: $border-radius-lg;
-  padding: $spacing-lg;
+  border-radius: vars.$border-radius-lg;
+  padding: vars.$spacing-lg;
   box-shadow: var(--shadow-md);
-  transition: all $transition-normal;
+  transition: all vars.$transition-normal;
 }

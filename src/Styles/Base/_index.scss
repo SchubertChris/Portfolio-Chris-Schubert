@@ -1,0 +1,14 @@
+// src/Styles/Base/_index.scss
+// ===========================
+// BASE STYLES INDEX
+// ===========================
+
+// Variables müssen zuerst kommen
+@forward 'VARIABLES';
+// Dann Mixins, die die Variables nutzen
+@forward 'MIXINS';
+// Dann der Rest in logischer Reihenfolge
+@forward 'RESET';
+@forward 'ANIMATIONS';
+@forward 'LightMode';
+@forward 'DarkMode';

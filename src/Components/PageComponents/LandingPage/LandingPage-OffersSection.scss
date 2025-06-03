@@ -2,8 +2,8 @@
 // OFFERS SECTION STYLES (TESTIMONIALS)
 // ===========================
 
-@import '@styles/Base/VARIABLES';
-@import '@styles/Base/MIXINS';
+@use '@styles/Base' as *;
+
 
 .offers {
 

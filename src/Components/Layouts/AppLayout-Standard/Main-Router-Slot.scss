@@ -2,8 +2,8 @@
 // MAIN CONTENT STYLES
 // ===========================
 
-@import '@styles/Base/VARIABLES';
-@import '@styles/Base/MIXINS';
+@use '@styles/Base' as *;
+
 
 .main-content {
   flex: 1;

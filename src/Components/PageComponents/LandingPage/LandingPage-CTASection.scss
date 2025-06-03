@@ -2,8 +2,8 @@
 // CTA SECTION STYLES
 // ===========================
 
-@use '@styles/Base' as *;
-
+@use '@styles/Base/VARIABLES' as *;
+@use '@styles/Base/MIXINS' as *;
 .cta {
   position: relative;
   overflow: hidden;
@@ -38,6 +38,24 @@
     gap: $spacing-md;
     margin-bottom: $spacing-2xl;
     flex-wrap: wrap;
+    .btn-secondary {
+      @include transition(background-color, color);
+      color: var(--color-text);
+      background-color: var(--color-background-secondary);
+      text-decoration: none;
+
+      &:hover {
+        background-color: var(--color-hover);
+        transform: translateY(-2px);
+      }
+    }
+    .btn-primary {
+      @include transition(background-color, color);
+      color: var(--color-bg);
+      background-color: var(--color-accent);
+      color: var(--color-background);
+      text-decoration: none;
+    }
   }
 
   &__btn {

@@ -2,19 +2,23 @@
 // NAVBAR STYLES
 // ===========================
 
-@use '@styles/Base/_index.scss' as *;
+@use "@styles/Base/imports" as *;
 
 .navbar {
   position: fixed;
-  top: 0;
+  bottom: 40px;
   left: 0;
   right: 0;
   height: $navbar-height;
-  background-color: var(--color-background);
+  background-color: rgba(var(--color-background-secondary), 0.85);
   border-bottom: 1px solid var(--color-border);
   z-index: $z-index-sticky;
   transition: all $transition-normal;
-
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 50px;
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border);
   // Sticky State
   &--sticky {
     box-shadow: var(--shadow-md);
@@ -25,6 +29,7 @@
   // Container
   &__container {
     @include container;
+    @include flex-between;
     @include flex-between;
     height: 100%;
   }
@@ -56,8 +61,8 @@
   // Desktop Navigation
   &__desktop {
     @include flex(row, center, center, nowrap, $spacing-xl);
-    
-    @include breakpoint-max('md') {
+
+    @include breakpoint-max("md") {
       display: none;
     }
   }
@@ -70,25 +75,29 @@
 
   &__link {
     position: relative;
-    padding: $spacing-xs 0;
+    padding: 1rem;
+    border-radius: $border-radius-md;
+    border: 1px solid transparent;
     color: var(--color-text);
     text-decoration: none !important;
     font-weight: $font-weight-medium;
     transition: color $transition-fast;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: 0;
       left: 0;
       width: 0;
-      height: 2px;
+      height: 1px;
       background-color: var(--color-accent);
       transition: width $transition-fast;
     }
 
     &:hover {
       color: var(--color-accent);
+      border: 1px solid var(--color-border);
+      background-color: var(--color-hover);
 
       &::after {
         width: 100%;
@@ -113,8 +122,8 @@
     padding: $spacing-xs;
     flex-direction: column;
     gap: 4px;
-    
-    @include breakpoint('md') {
+
+    @include breakpoint("md") {
       display: none;
     }
 
@@ -157,7 +166,7 @@
     overflow-y: auto;
     padding: $spacing-xl;
 
-    @include breakpoint('md') {
+    @include breakpoint("md") {
       display: none;
     }
 
@@ -215,4 +224,10 @@
     opacity: 0;
     animation: fadeIn $transition-fast forwards;
   }
+}
+
+.navbar__logo-image {
+  width: 40px;
+  height: auto;
+  margin-right: $spacing-xs;
 }

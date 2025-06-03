@@ -2,7 +2,8 @@
 // OFFERS SECTION STYLES (TESTIMONIALS)
 // ===========================
 
-@use '@styles/Base' as *;
+@use '@styles/Base/VARIABLES' as *;
+@use '@styles/Base/MIXINS' as *;
 
 
 .offers {
@@ -27,6 +28,7 @@
     position: relative;
     max-width: 800px;
     margin: 0 auto $spacing-2xl;
+    padding: $spacing-lg;
   }
 
   // Navigation Buttons
@@ -83,7 +85,7 @@
   &__testimonial-container {
     position: relative;
     overflow: hidden;
-    min-height: 400px;
+    min-height: 550px;
   }
 
   // Individual Testimonial
@@ -100,6 +102,7 @@
     background-color: var(--color-background);
     border-radius: $border-radius-lg;
     box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-border);
 
     &--active {
       opacity: 1;

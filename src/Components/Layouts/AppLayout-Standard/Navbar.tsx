@@ -7,6 +7,7 @@ import { Link, useLocation } from 'react-router-dom';
 import ThemeToggleButton from '@/Components/Ui/ThemeToggle-Button';
 import { createStickyNavObserver } from '@/Components/Utils/ScrollObserver';
 import './Navbar.scss';
+import Logo from '@/Assets/Images/Logo/CandleScopeLogo.png'; // Import your logo image
 
 interface NavLink {
   label: string;
@@ -58,10 +59,9 @@ const Navbar: React.FC = () => {
     <>
       <nav className={`navbar ${isSticky ? 'navbar--sticky' : ''}`}>
         <div className="navbar__container container">
-          {/* Logo */}
           <Link to="/" className="navbar__logo">
-            <span className="navbar__logo-text">CS</span>
-            <span className="navbar__logo-subtext">Portfolio</span>
+            <img src={Logo} alt="CandleScope Logo" className="navbar__logo-image" />
+            <span className="navbar__logo-subtext">Chrris Schubert</span>
           </Link>
 
           {/* Desktop Navigation */}

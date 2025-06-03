@@ -16,6 +16,16 @@
   --color-border: #{vars.$light-border};
   --color-accent: #{vars.$light-accent};
   
+  // Gradient Farben
+  --gradient-primary: linear-gradient(135deg, #{vars.$gradient-purple} 0%, #{vars.$gradient-blue} 100%);
+  --gradient-secondary: linear-gradient(135deg, #{vars.$gradient-pink} 0%, #{vars.$gradient-purple} 100%);
+  --gradient-accent: linear-gradient(135deg, #{vars.$gradient-indigo} 0%, #{vars.$gradient-purple} 100%);
+  --gradient-subtle: linear-gradient(135deg, #{vars.$light-background} 0%, #{vars.$light-background-secondary} 100%);
+  
+  // Text Gradients
+  --gradient-text: linear-gradient(135deg, #{vars.$color-primary-4} 0%, #{vars.$gradient-purple} 100%);
+  --gradient-text-hover: linear-gradient(135deg, #{vars.$gradient-purple} 0%, #{vars.$gradient-pink} 100%);
+  
   // Schatten
   --shadow-color: #{vars.$light-shadow};
   --shadow-sm: 0 1px 2px 0 var(--shadow-color);
@@ -23,14 +33,19 @@
   --shadow-lg: 0 10px 15px -3px var(--shadow-color), 0 4px 6px -2px var(--shadow-color);
   --shadow-xl: 0 20px 25px -5px var(--shadow-color), 0 10px 10px -5px var(--shadow-color);
   
+  // Glassmorphism Effekte
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-shadow: 0 8px 32px 0 rgba(94, 44, 165, 0.12);
+  
   // Zusätzliche Farben
   --color-hover: #{color.scale(vars.$light-background-secondary, $lightness: -5%)};
   --color-active: #{color.scale(vars.$light-background-secondary, $lightness: -10%)};
   --color-disabled: #{color.scale(vars.$light-text-secondary, $lightness: 20%)};
   
   // Links
-  --color-link: #{vars.$color-primary-4};
-  --color-link-hover: #{color.scale(vars.$color-primary-4, $lightness: -10%)};
+  --color-link: #{vars.$gradient-purple};
+  --color-link-hover: #{vars.$gradient-pink};
   --color-link-visited: #{vars.$color-primary-5};
   
   // Status Farben
@@ -59,11 +74,11 @@
   }
   
   &::-webkit-scrollbar-thumb {
-    background: var(--color-border);
+    background: var(--gradient-primary);
     border-radius: vars.$border-radius-md;
     
     &:hover {
-      background: var(--color-text-secondary);
+      background: var(--gradient-secondary);
     }
   }
   

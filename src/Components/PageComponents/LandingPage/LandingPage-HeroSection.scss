@@ -1,7 +1,8 @@
 // ===========================
 // HERO SECTION STYLES
 // ===========================
-@use '@styles/Base' as *;
+@use '@styles/Base/VARIABLES' as *;
+@use '@styles/Base/MIXINS' as *;
 
 
 .hero {
@@ -65,9 +66,23 @@
 
   &__actions {
     @include flex(row, flex-start, center, wrap, $spacing-md);
+    .btn-secondary {
+      @include transition(background-color, color);
+      color: var(--color-text);
+      background-color: var(--color-background-secondary);
+      text-decoration: none;
 
-    @include breakpoint-max('lg') {
-      justify-content: center;
+      &:hover {
+        background-color: var(--color-hover);
+        transform: translateY(-2px);
+      }
+    }
+    .btn-primary {
+      @include transition(background-color, color);
+      color: var(--color-bg);
+      background-color: var(--color-accent);
+      color: var(--color-background);
+      text-decoration: none;
     }
   }
 
@@ -176,6 +191,7 @@
   // Scroll Indicator
   &__scroll-indicator {
     position: absolute;
+    top: 75%;
     bottom: $spacing-xl;
     left: 50%;
     transform: translateX(-50%);

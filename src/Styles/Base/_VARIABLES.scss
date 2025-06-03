@@ -4,12 +4,12 @@
 // FARBEN
 // ===========================
 
-// Basis Farbpalette
-$color-primary-1: #D9D7CC;
-$color-primary-2: #BFBBB4;
-$color-primary-3: #F2EFE9;
-$color-primary-4: #594D3E;
-$color-primary-5: #8C7E6C;
+// Basis Farbpalette - Moderne Purple/Blue Töne
+$color-primary-1: #E4D4F4; // Helles Lila
+$color-primary-2: #C9A0DC; // Medium Lila  
+$color-primary-3: #F5F0FF; // Sehr helles Lila (fast weiß)
+$color-primary-4: #5E2CA5; // Dunkles Purple
+$color-primary-5: #8B5CF6; // Lebendiges Purple
 
 // Light Mode Farben
 $light-background: $color-primary-3;
@@ -20,14 +20,20 @@ $light-border: $color-primary-2;
 $light-shadow: rgba($color-primary-4, 0.1);
 $light-accent: $color-primary-4;
 
-// Dark Mode Farben
-$dark-background: #1a1814;
-$dark-background-secondary: #262119;
+// Dark Mode Farben - Tiefes Schwarz mit Purple Akzenten
+$dark-background: #0A0118; // Fast Schwarz mit Purple-Unterton
+$dark-background-secondary: #ffffff0e; // Dunkles Purple-Schwarz
 $dark-text: $color-primary-3;
 $dark-text-secondary: $color-primary-2;
-$dark-border: #3d352a;
+$dark-border: #2D1B69; // Dunkles Purple für Borders
 $dark-shadow: rgba(#000000, 0.3);
 $dark-accent: $color-primary-1;
+
+// Zusätzliche Akzentfarben für Verläufe
+$gradient-purple: #7C3AED; // Gradient Purple
+$gradient-blue: #2563EB; // Gradient Blue
+$gradient-pink: #EC4899; // Gradient Pink
+$gradient-indigo: #4F46E5; // Gradient Indigo
 
 // ===========================
 // TYPOGRAFIE
@@ -35,7 +41,7 @@ $dark-accent: $color-primary-1;
 
 $font-family-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 $font-family-secondary: Georgia, 'Times New Roman', serif;
-$font-family-monospace: 'Courier New', Courier, monospace;
+$font-family-monospace: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
 
 // Font Größen
 $font-size-base: 16px;

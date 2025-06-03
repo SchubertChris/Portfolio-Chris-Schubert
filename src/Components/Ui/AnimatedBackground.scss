@@ -2,8 +2,8 @@
 // ANIMATED BACKGROUND STYLES
 // ===========================
 
-@import '@styles/Base/_VARIABLES';
-@import '@styles/Base/_MIXINS';
+@use '@styles/Base/VARIABLES' as *;
+@use '@styles/Base/MIXINS' as *;
 
 .animated-background {
   position: absolute;
@@ -21,42 +21,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    
-    // Basis Gradient Layer
-    &::before {
-      content: '';
-      position: absolute;
-      top: -100%;
-      left: -100%;
-      width: 300%;
-      height: 300%;
-      background: linear-gradient(
-        60deg,
-        var(--gradient-1) 0%,
-        var(--gradient-2) 20%,
-        var(--gradient-3) 40%,
-        var(--gradient-4) 60%,
-        var(--gradient-5) 80%,
-        var(--gradient-1) 100%
-      );
-      animation: gradientRotate 25s linear infinite;
-    }
-    
-    // Zweiter animierter Gradient für Tiefe
-    &::after {
-      content: '';
-      position: absolute;
-      top: -100%;
-      left: -100%;
-      width: 300%;
-      height: 300%;
-      background: radial-gradient(
-        ellipse at center,
-        transparent 0%,
-        var(--gradient-overlay) 100%
-      );
-      animation: pulseGradient 15s ease-in-out infinite;
-    }
   }
 
   &__orb {

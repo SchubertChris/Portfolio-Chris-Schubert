@@ -2,14 +2,15 @@
 // FOOTER STYLES
 // ===========================
 
-@use '@styles/Base' as *;
+@use '@styles/Base/VARIABLES' as *;
+@use '@styles/Base/MIXINS' as *;
+
 .footer {
   background-color: var(--color-background-secondary);
   border-top: 1px solid var(--color-border);
   margin-top: auto;
 
   &__content {
-    padding-top: $spacing-3xl;
     padding-bottom: $spacing-xl;
   }
 
@@ -17,6 +18,8 @@
   &__grid {
     @include grid(4, $spacing-xl, false);
     margin-bottom: $spacing-3xl;
+    margin-top: $spacing-2xl;
+    
 
     @include breakpoint-max('lg') {
       grid-template-columns: repeat(2, 1fr);

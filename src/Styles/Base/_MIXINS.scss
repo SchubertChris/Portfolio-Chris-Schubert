@@ -46,26 +46,32 @@
 // ===========================
 
 @mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap, $gap: 0) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: $justify;
-  align-items: $align;
-  flex-wrap: $wrap;
-  @if $gap != 0 {
-    gap: $gap;
+  & {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+    @if $gap != 0 {
+      gap: $gap;
+    }
   }
 }
 
 @mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  & {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @mixin flex-between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  & {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 // ===========================
@@ -73,13 +79,15 @@
 // ===========================
 
 @mixin grid($columns: 1, $gap: vars.$spacing-md, $auto-fit: false, $min-width: 250px) {
-  display: grid;
-  gap: $gap;
-  
-  @if $auto-fit {
-    grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
-  } @else {
-    grid-template-columns: repeat($columns, 1fr);
+  & {
+    display: grid;
+    gap: $gap;
+    
+    @if $auto-fit {
+      grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+    } @else {
+      grid-template-columns: repeat($columns, 1fr);
+    }
   }
 }
 
@@ -140,26 +148,32 @@
 // ===========================
 
 @mixin glass-effect {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  & {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
 }
 
 @mixin hover-lift {
-  transition: transform vars.$transition-normal, box-shadow vars.$transition-normal;
-  
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+  & {
+    transition: transform vars.$transition-normal, box-shadow vars.$transition-normal;
+    
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
   }
 }
 
 @mixin hover-scale($scale: 1.05) {
-  transition: transform vars.$transition-normal;
-  
-  &:hover {
-    transform: scale($scale);
+  & {
+    transition: transform vars.$transition-normal;
+    
+    &:hover {
+      transform: scale($scale);
+    }
   }
 }
 
@@ -168,10 +182,12 @@
 // ===========================
 
 @mixin container {
-  width: 100%;
-  max-width: vars.$container-max-width;
-  margin: 0 auto;
-  padding: 0 vars.$spacing-md;
+  & {
+    width: 100%;
+    max-width: vars.$container-max-width;
+    margin: 0 auto;
+    padding: 0 vars.$spacing-md;
+  }
   
   @include breakpoint('md') {
     padding: 0 vars.$spacing-lg;
@@ -183,30 +199,34 @@
 }
 
 @mixin visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+  & {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
 }
 
 @mixin reset-button {
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  font: inherit;
-  color: inherit;
-  cursor: pointer;
-  outline: none;
-  
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 0.6;
+  & {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+    
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
   }
 }
 
@@ -229,16 +249,20 @@
 // ===========================
 
 @mixin themed-background {
-  background-color: var(--color-background);
-  color: var(--color-text);
-  transition: background-color vars.$transition-normal, color vars.$transition-normal;
+  & {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: background-color vars.$transition-normal, color vars.$transition-normal;
+  }
 }
 
 @mixin themed-card {
-  background-color: var(--color-background-secondary);
-  border: 1px solid var(--color-border);
-  border-radius: vars.$border-radius-lg;
-  padding: vars.$spacing-lg;
-  box-shadow: var(--shadow-md);
-  transition: all vars.$transition-normal;
+  & {
+    background-color: var(--color-background-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: vars.$border-radius-lg;
+    padding: vars.$spacing-lg;
+    box-shadow: var(--shadow-md);
+    transition: all vars.$transition-normal;
+  }
 }

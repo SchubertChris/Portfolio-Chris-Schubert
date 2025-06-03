@@ -2,7 +2,8 @@
 // ABOUT SECTION STYLES
 // ===========================
 
-@use '@styles/Base' as *;
+@use '@styles/Base/VARIABLES' as *;
+@use '@styles/Base/MIXINS' as *;
 
 .about {
 

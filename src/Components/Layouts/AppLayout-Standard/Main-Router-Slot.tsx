@@ -3,7 +3,7 @@
 // ===========================
 
 import React from 'react';
-import './Main-Router-Slot.scss';
+import '@/Components/Layouts/AppLayout-Standard/Style/Main-Router-Slot.scss';
 
 interface MainRouterSlotProps {
   children: React.ReactNode;
